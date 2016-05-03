@@ -1,0 +1,25 @@
+{
+  "name": "movies-hunter",
+  "version": "0.0.0",
+  "description": "Bot for movies-hunter app",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattp94/movies-hunter.git"
+  },
+  "author": {
+    "name": "Matthieu Puibaraud",
+    "email": "matthieu.puibaraud@isep.fr"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattp94/movies-hunter/issues"
+  },
+  "homepage": "https://github.com/mattp94/movies-hunter#readme",
+  "dependencies": {
+    "moment": "^2.13.0"
+  }
+}
