@@ -41,18 +41,14 @@ function Extractor() {
                 sed: moment().format('YYYYMMDD')
             }
         }
-
-        // Get params as string
-        var params = querystring.stringify(sortObj(config.params))
-
-        // Build and hash sig param
-        var shasum = crypto.createHash('sha1')
-        var sig = encodeURIComponent(shasum.update(config.secretKey + params, 'utf-8').digest('base64'))
-
-        // Add sig param to params
-        var url = config.api + '?' + params + '&sig=' + sig
-
-        console.log(url)
+        
+        var params = querystring.stringify(sortObj(config.params)) // Get params as string
+        var sig = encodeURIComponent(crypto.createHash('sha1').update(config.secretKey + params, 'utf-8').digest('base64')) // Build and hash sig param
+        var url = config.api + '?' + params + '&sig=' + sig // Concat final url
+        
+        var response = request('GET', url)
+        var data = response.getBody('utf8')
+        console.log(data)
     }
 
     this.test = getDataFromAllocine
