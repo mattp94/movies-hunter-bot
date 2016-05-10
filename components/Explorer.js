@@ -33,7 +33,7 @@ function Explorer() {
         try {
             date = fs.readFileSync(folder.dirname + '/' + folder.basename + '/.date', 'utf8')
         } catch (error) {
-            date = moment(stats.mtime).format('YYYY-MM-DD HH:mm:ss')
+            date = moment(stats.mtime).format()
             fs.writeFileSync(folder.dirname + '/' + folder.basename + '/.date', date)
         }
 

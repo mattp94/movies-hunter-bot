@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/mattp94/movies-hunter#readme",
   "dependencies": {
-    "moment": "^2.13.0"
+    "cheerio": "^0.20.0",
+    "moment": "^2.13.0",
+    "querystring": "^0.2.0",
+    "sort-object": "^3.0.2",
+    "sync-request": "^3.0.1"
   }
 }
