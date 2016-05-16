@@ -13,10 +13,10 @@ var extractor = require('./lib/extractor.js')
 // console.log(JSON.stringify(api.allocine(204027)))
 // console.log(extractor.allocine.getCodes('les bronzés'))
 
-var codes = extractor.allocine.getCodes('LA GLACE ET LE CIEL')
+var codes = extractor.allocine.getCodes('Réalité')
 console.log(codes)
 
 var movie = extractor.allocine.getData(codes[0])
 console.log(movie)
 
-extractor.downloadPoster(movie)
+extractor.savePoster(movie)
