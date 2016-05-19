@@ -13,7 +13,7 @@ var extractor = require('./lib/extractor.js')
 // console.log(JSON.stringify(api.allocine(204027)))
 // console.log(extractor.allocine.getCodes('les bronzés'))
 
-var codes = extractor.allocine.getCodes('Les poupées russes')
+var codes = extractor.allocine.getCodes('Réalité')
 console.log(codes)
 
 var movie = extractor.allocine.getData(codes[0])
