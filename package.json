@@ -26,6 +26,7 @@
     "querystring": "^0.2.0",
     "sort-object": "^3.0.2",
     "striptags": "^2.1.1",
-    "sync-request": "^3.0.1"
+    "sync-request": "^3.0.1",
+    "thread-sleep": "^1.0.4"
   }
 }
