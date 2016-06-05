@@ -8,12 +8,12 @@ var extractor = require('./lib/extractor.js')
 
 // *** Test ***
 
-// console.log(explorer.browse(['/Users/matthieu/Desktop/mh_tests/test1', '/Users/matthieu/Desktop/mh_tests/test2']))
+console.log(explorer.browse(['/Users/matthieu/Desktop/mymovies/']))
 // console.log(api.google('les bronzés allocine', 'fr', 'fr', 5))
 // console.log(JSON.stringify(api.allocine(204027)))
 // console.log(extractor.allocine.getCodes('les bronzés'))
 
-var codes = extractor.allocine.getCodes('Réalité')
+var codes = extractor.allocine.getCodes('Un éléphant ça trompe énormément')
 console.log(codes)
 
 var movie = extractor.allocine.getData(codes[0])
