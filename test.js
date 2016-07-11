@@ -27,8 +27,10 @@ var sleep = require('thread-sleep')
 var folders = explorer.browse(['/Users/matthieu/Desktop/mymovies/'])
 
 folders.forEach(function (folder) {
-    var res = core.insertionHandler(folder)
-    console.log(folder.search, res.success, res.from)
+    var res = core.movieHandler(folder)
+    core.insertionHandler(res.movie)
+
+    console.log(folder.search, res.from)
     sleep(2000)
 })
 
