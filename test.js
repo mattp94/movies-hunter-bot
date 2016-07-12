@@ -27,10 +27,13 @@ var sleep = require('thread-sleep')
 var folders = explorer.browse(['/Users/matthieu/Desktop/mymovies/'])
 
 folders.forEach(function (folder) {
-    var res = core.movieHandler(folder)
-    core.insertionHandler(res.movie)
+    var result = core.movieHandler(folder)
+        result = core.duplicateHandler(result)
+                 core.insertionHandler(result)
 
-    console.log(folder.search, res.from)
+    result.duplicate = result.original ? true : false
+
+    console.log(folder.search, result.from, 'duplicate:', result.duplicate)
     sleep(2000)
 })
 
