@@ -31,9 +31,9 @@ folders.forEach(function (folder) {
         result = core.duplicateHandler(result)
                  core.insertionHandler(result)
 
-    result.duplicate = result.original ? true : false
+    var duplicate = result.duplicate ? true : false
 
-    console.log(folder.search, result.from, 'duplicate:', result.duplicate)
+    console.log(folder.search, result.from, `[duplicate:${duplicate}]`)
     sleep(2000)
 })
 
