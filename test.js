@@ -5,8 +5,6 @@ var api = require('./lib/api.js')
 var extractor = require('./lib/extractor.js')
 var core = require('./lib/core.js')
 
-var sleep = require('thread-sleep')
-
 
 
 // *** Test ***
@@ -16,7 +14,7 @@ var sleep = require('thread-sleep')
 // console.log(JSON.stringify(api.allocine(204027)))
 // console.log(extractor.allocine.getCodes('les bronzés'))
 
-// var codes = extractor.allocine.getCodes('Barbecue')
+// var codes = extractor.allocine.getCodes('Her')
 // console.log(codes)
 //
 // var movie = extractor.allocine.getData(codes[0])
@@ -27,14 +25,16 @@ var sleep = require('thread-sleep')
 var folders = explorer.browse(['/Users/matthieu/Desktop/mymovies/'])
 
 folders.forEach(function (folder) {
-    var result = core.movieHandler(folder)
-        result = core.duplicateHandler(result)
-                 core.insertionHandler(result)
+    var result
 
-    var duplicate = result.duplicate ? true : false
+    result = core.movieHandler(folder)
+    result = core.duplicateHandler(result)
+    result = core.posterHandler(result)
+             core.insertionHandler(result)
+             core.sleepHandler(result)
 
-    console.log(folder.search, result.from, `[duplicate:${duplicate}]`)
-    sleep(2000)
+    console.log(folder.search, result.from, result.poster ? 'poster' : '', result.duplicate ? 'duplicate' : '')
+    // console.log(require('util').inspect(result.movie, {depth: 1}));
 })
 
 core.done()
