@@ -27,9 +27,9 @@ var folders = explorer.browse(['/Users/matthieu/Desktop/mymovies/'])
 folders.forEach(function (folder) {
     var result
 
-    result = core.movieHandler(folder)
-    result = core.duplicateHandler(result)
-    result = core.posterHandler(result)
+    result = core.movieHandler(folder) // return movie and from
+    result = core.duplicateHandler(result) // return duplicate or undefined
+    result = core.posterHandler(result) // return poster?
              core.insertionHandler(result)
              core.sleepHandler(result)
 
