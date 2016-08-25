@@ -30,10 +30,11 @@ folders.forEach(function (folder) {
     result = core.movieHandler(folder) // return movie and from
     result = core.duplicateHandler(result) // return duplicate or undefined
     result = core.posterHandler(result) // return poster?
+    result = core.trailerHandler(result) // return trailer?
              core.insertionHandler(result)
              core.sleepHandler(result)
 
-    console.log(folder.search, result.from, result.poster ? 'poster' : '', result.duplicate ? 'duplicate' : '')
+    console.log(folder.search, result.from, result.poster ? 'poster' : '', result.trailer ? 'trailer' : '', result.duplicate ? 'duplicate' : '')
     // console.log(require('util').inspect(result.movie, {depth: 1}));
 })
 
