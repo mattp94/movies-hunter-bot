@@ -9,11 +9,11 @@ var core = require('./lib/core.js')
 
 // *** Test ***
 
-// console.log(explorer.browse(['/Users/matthieu/Desktop/mymovies/']))
+// console.log(explorer.browse(['/Users/matthieu/Desktop/basicmovies/']))
 // console.log(api.google('les bronzés allocine', 'fr', 'fr', 5))
 // console.log(JSON.stringify(api.allocine(204027)))
 // console.log(extractor.allocine.getCodes('les bronzés'))
-
+//
 // var codes = extractor.allocine.getCodes('Her')
 // console.log(codes)
 //
@@ -22,7 +22,7 @@ var core = require('./lib/core.js')
 //
 // extractor.savePoster(movie)
 
-var folders = explorer.browse(['/Users/matthieu/Desktop/mymovies/'])
+var folders = explorer.browse(['/Users/matthieu/Desktop/basicmovies/'])
 
 folders.forEach(function (folder) {
     var result
