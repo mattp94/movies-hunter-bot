@@ -22,19 +22,19 @@ var core = require('./lib/core.js')
 //
 // extractor.savePoster(movie)
 
-var folders = explorer.browse(['/Users/matthieu/Desktop/basicmovies/'])
+var files = explorer.browse(['/Users/matthieu/Desktop/basicmovies/'])
 
-folders.forEach(function (folder) {
+files.forEach(function (file) {
     var result
 
-    result = core.movieHandler(folder) // return movie and from
+    result = core.movieHandler(file) // return movie and from
     result = core.duplicateHandler(result) // return duplicate or undefined
     result = core.posterHandler(result) // return poster?
     result = core.trailerHandler(result) // return trailer?
              core.insertionHandler(result)
              core.sleepHandler(result)
 
-    console.log(folder.search, result.from, result.poster ? 'poster' : '', result.trailer ? 'trailer' : '', result.duplicate ? 'duplicate' : '')
+    console.log(file.search, result.from, result.poster ? 'poster' : '', result.trailer ? 'trailer' : '', result.duplicate ? 'duplicate' : '')
     // console.log(require('util').inspect(result.movie, {depth: 1}));
 })
 
