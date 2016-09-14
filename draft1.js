@@ -7,7 +7,7 @@ var core = require('./lib/core.js')
 
 
 
-// *** Test ***
+// *** Draft 1 ***
 
 // console.log(explorer.browse(['/Users/matthieu/Desktop/basicmovies/']))
 // console.log(api.google('les bronzés allocine', 'fr', 'fr', 5))
@@ -29,13 +29,12 @@ files.forEach(function (file) {
 
     result = core.movieHandler(file) // return movie and from
     result = core.duplicateHandler(result) // return duplicate or undefined
-    result = core.posterHandler(result) // return poster?
-    result = core.trailerHandler(result) // return trailer?
+    // result = core.posterHandler(result) // return poster?
+    // result = core.trailerHandler(result) // return trailer?
              core.insertionHandler(result)
              core.sleepHandler(result)
 
     console.log(file.search, result.from, result.poster ? 'poster' : '', result.trailer ? 'trailer' : '', result.duplicate ? 'duplicate' : '')
-    // console.log(require('util').inspect(result.movie, {depth: 1}));
 })
 
 core.done()
