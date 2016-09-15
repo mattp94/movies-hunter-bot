@@ -9,7 +9,7 @@ var core = require('./lib/core.js')
 
 // *** Draft 1 ***
 
-// console.log(explorer.browse(['/Users/matthieu/Desktop/basicmovies/']))
+// console.log(explorer.browse(['/Users/matthieu/Desktop/basicmovies']))
 // console.log(api.google('les bronzés allocine', 'fr', 'fr', 5))
 // console.log(JSON.stringify(api.allocine(204027)))
 // console.log(extractor.allocine.getCodes('les bronzés'))
@@ -22,15 +22,15 @@ var core = require('./lib/core.js')
 //
 // extractor.savePoster(movie)
 
-var files = explorer.browse(['/Users/matthieu/Desktop/basicmovies/'])
+var files = explorer.browse(['/Users/matthieu/Desktop/basicmovies'])
 
 files.forEach(function (file) {
     var result
 
     result = core.movieHandler(file) // return movie and from
     result = core.duplicateHandler(result) // return duplicate or undefined
-    // result = core.posterHandler(result) // return poster?
-    // result = core.trailerHandler(result) // return trailer?
+    result = core.posterHandler(result) // return poster?
+    result = core.trailerHandler(result) // return trailer?
              core.insertionHandler(result)
              core.sleepHandler(result)
 
