@@ -5,6 +5,9 @@ var api = require('./lib/api.js')
 var extractor = require('./lib/extractor.js')
 var core = require('./lib/core.js')
 
+var fs = require ('fs')
+var path = require('path')
+
 
 
 // *** Draft 1 ***
@@ -22,7 +25,19 @@ var core = require('./lib/core.js')
 //
 // extractor.savePoster(movie)
 
-var files = explorer.browse(['/Users/matthieu/Desktop/basicmovies'])
+var files = explorer.browse(['/Users/matthieu/Desktop/basicmovies'], function (filename) {
+    var stats = fs.statSync(filename)
+
+    if (stats.isFile() && !/\.(mkv|avi|mp4|iso|img)$/i.test(filename))
+        return true
+
+    if (stats.isDirectory()) {
+        var videoTs = fs.readdirSync(filename).find(basename => basename.toLowerCase() === 'video_ts')
+
+        if (videoTs && fs.statSync(path.join(filename, videoTs)).isDirectory())
+            return true
+    }
+})
 
 files.forEach(function (file) {
     var result

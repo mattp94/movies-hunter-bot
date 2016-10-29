@@ -1,0 +1,14 @@
+[{
+    "filename": {
+        "pattern": "",
+        "case": false
+    },
+    "size": {
+        "min": 10,
+        "max": 100
+    },
+    "contains": {
+        "only": false,
+        "elements": []
+    }
+}]
