@@ -23,9 +23,9 @@
     "lowdb": "^0.13.1",
     "moment": "^2.13.0",
     "querystring": "^0.2.0",
-    "sort-object": "^3.0.2",
     "striptags": "^2.1.1",
     "sync-request": "^3.0.1",
-    "thread-sleep": "^1.0.4"
+    "thread-sleep": "^1.0.4",
+    "torrent-name-parser": "^0.6.5"
   }
 }
