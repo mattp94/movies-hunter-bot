@@ -24,25 +24,3 @@ var path = require('path')
 // console.log(movie)
 //
 // extractor.savePoster(movie)
-
-var files = explorer.browse(['/Users/matthieu/Desktop/recursive-movies'], function (pathname) {
-    var stats = fs.statSync(pathname)
-
-    return stats.isFile() && /\.(mkv|avi|mp4|iso|img|lol)$/i.test(pathname)
-    return stats.isDirectory() && /\.(dvd)$/i.test(pathname)
-})
-
-files.forEach(function (file) {
-    var result
-
-    result = core.movieHandler(file) // Add movie and from
-    result = core.duplicateHandler(result) // Add duplicate or undefined
-    result = core.posterHandler(result) // Add poster?
-    result = core.trailerHandler(result) // Add trailer?
-             core.insertionHandler(result)
-             core.sleepHandler(result)
-
-    console.log(file.search, result.from, result.poster ? 'poster' : '', result.trailer ? 'trailer' : '', result.duplicate ? 'duplicate' : '')
-})
-
-core.done()
