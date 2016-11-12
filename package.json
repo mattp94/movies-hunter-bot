@@ -21,6 +21,7 @@
     "cheerio": "^0.20.0",
     "lodash": "^4.13.1",
     "lowdb": "^0.13.1",
+    "make-error": "^1.2.1",
     "moment": "^2.13.0",
     "querystring": "^0.2.0",
     "striptags": "^2.1.1",
