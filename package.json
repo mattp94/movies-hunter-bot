@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mattp94/movies-hunter#readme",
   "dependencies": {
     "cheerio": "^0.20.0",
+    "js-yaml": "^3.7.0",
     "lodash": "^4.13.1",
     "lowdb": "^0.13.1",
     "make-error": "^1.2.1",
@@ -27,6 +28,7 @@
     "striptags": "^2.1.1",
     "sync-request": "^3.0.1",
     "thread-sleep": "^1.0.4",
-    "torrent-name-parser": "^0.6.5"
+    "torrent-name-parser": "^0.6.5",
+    "uuid": "^3.0.0"
   }
 }

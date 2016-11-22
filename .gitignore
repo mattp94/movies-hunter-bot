@@ -1,3 +1,11 @@
-.DS_Store
-node_modules
+# Movies-Hunter
 data
+
+# Hidden files
+.DS_Store
+
+# Dependency directories
+node_modules
+
+# Logs
+npm-debug.log*
