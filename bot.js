@@ -5,16 +5,14 @@ var core = require('./lib/core')
 var config = require('./lib/config')
 var error = require('./lib/error')
 
-var fs = require('fs')
+var fs = require('fs-plus')
 
 
 
 // *** Bot ***
 
 var files = explorer.browse(config.directories, function (pathname) { // Get potential movies
-    var stats = fs.statSync(pathname)
-
-    return (stats.isFile() || stats.isDirectory()) && config.extensions.length > 0 && new RegExp('\.(' + config.extensions.join('|') + ')$', 'i').test(pathname)
+    return (fs.isFileSync(pathname) || fs.isDirectorySync(pathname)) && config.extensions.length > 0 && new RegExp('\.(' + config.extensions.join('|') + ')$', 'i').test(pathname)
 })
 
 files.forEach(function (file) {
