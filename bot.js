@@ -29,7 +29,7 @@ files.forEach(function (file) {
         console.log(file.search, result.from, result.poster ? 'poster' : '', result.trailer ? 'trailer' : '', result.duplicate ? 'duplicate' : '')
     } catch (e) {
         if (e instanceof error.LoggedError)
-            console.log(e.message)
+            console.log(file.search, 'error: [' + e.message + ']')
         else
             throw e
     }
