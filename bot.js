@@ -1,12 +1,12 @@
 // *** Libraries ***
 
-var explorer = require('./lib/explorer')
-var core = require('./lib/core')
-var config = require('./lib/config')
-var error = require('./lib/error')
-var logger = require('./lib/logger')
+const explorer = require('./lib/explorer')
+const core = require('./lib/core')
+const config = require('./lib/config')
+const error = require('./lib/error')
+const logger = require('./lib/logger')
 
-var fs = require('fs-plus')
+const fs = require('fs-plus')
 
 
 
@@ -14,14 +14,14 @@ var fs = require('fs-plus')
 
 logger.init()
 
-var files = explorer.browse(config.directories, function (pathname) { // Get potential movies
-    return (fs.isFileSync(pathname) && config.extensions.file.length > 0 && new RegExp('\.(' + config.extensions.file.join('|') + ')$', 'i').test(pathname)) ||
-           (fs.isDirectorySync(pathname) && config.extensions.directory.length > 0 && new RegExp('\.(' + config.extensions.directory.join('|') + ')$', 'i').test(pathname))
-})
+const files = explorer.browse(config.directories, pathname => // Get potential movies
+    (fs.isFileSync(pathname) && config.extensions.file.length > 0 && new RegExp('\.(' + config.extensions.file.join('|') + ')$', 'i').test(pathname)) ||
+    (fs.isDirectorySync(pathname) && config.extensions.directory.length > 0 && new RegExp('\.(' + config.extensions.directory.join('|') + ')$', 'i').test(pathname))
+)
 
-files.forEach(function (file, index) { // Extract data for each movie
+for (const [index, file] of files.entries()) // Extract data for each movie
     try {
-        var result
+        let result
 
         result = core.movieHandler(file) // Add movie and from
         result = core.duplicateHandler(result) // Add duplicate or undefined
@@ -37,7 +37,6 @@ files.forEach(function (file, index) { // Extract data for each movie
         else
             throw e
     }
-})
 
 core.flushHandler() // Flush tmp
 
