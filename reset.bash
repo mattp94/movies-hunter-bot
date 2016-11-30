@@ -1,4 +1,5 @@
-rm -f ./data/db.json
-rm -f ./data/posters/full/*
-rm -f ./data/posters/thumbnail/*
-rm -f ./data/trailers/*
+rm ./data/db.json
+rm ./data/posters/full/*
+rm ./data/posters/thumbnail/*
+rm ./data/trailers/*
+rm ./logs/*

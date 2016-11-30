@@ -2,13 +2,15 @@
 directories:
     - /Users/matthieu/Desktop/recursive-movies
 extensions:
-    - mkv
-    - avi
-    - mp4
-    - iso
-    - img
-    - dvd
-    - lol
+    file:
+        - mkv
+        - avi
+        - mp4
+        - iso
+        - img
+        - lol
+    directory:
+        - dvd
 download:
     posters: true
     trailers: true

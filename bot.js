@@ -15,10 +15,11 @@ var fs = require('fs-plus')
 logger.init()
 
 var files = explorer.browse(config.directories, function (pathname) { // Get potential movies
-    return (fs.isFileSync(pathname) || fs.isDirectorySync(pathname)) && config.extensions.length > 0 && new RegExp('\.(' + config.extensions.join('|') + ')$', 'i').test(pathname)
+    return (fs.isFileSync(pathname) && config.extensions.file.length > 0 && new RegExp('\.(' + config.extensions.file.join('|') + ')$', 'i').test(pathname)) ||
+           (fs.isDirectorySync(pathname) && config.extensions.directory.length > 0 && new RegExp('\.(' + config.extensions.directory.join('|') + ')$', 'i').test(pathname))
 })
 
-files.forEach(function (file, index) { // Scrap data for each movie
+files.forEach(function (file, index) { // Extract data for each movie
     try {
         var result
 
