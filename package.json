@@ -28,6 +28,7 @@
     "moment": "^2.13.0",
     "percentage": "^0.1.0",
     "querystring": "^0.2.0",
+    "random-ua": "0.0.6",
     "striptags": "^2.1.1",
     "sync-request": "^3.0.1",
     "thread-sleep": "^1.0.4",

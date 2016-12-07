@@ -12,5 +12,5 @@ extensions:
     directory:
         - dvd
 download:
-    posters: true
-    trailers: true
+    posters: false
+    trailers: false
