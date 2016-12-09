@@ -1,6 +1,7 @@
 ---
 directories:
-    - /Users/matthieu/Desktop/recursive-movies
+    # - /Users/matthieu/Desktop/recursive-movies
+    - /Users/matthieu/Desktop/mymovies
 extensions:
     file:
         - mkv
@@ -12,5 +13,5 @@ extensions:
     directory:
         - dvd
 download:
-    posters: false
-    trailers: false
+    posters: true
+    trailers: true
