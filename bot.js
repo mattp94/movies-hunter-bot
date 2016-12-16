@@ -6,7 +6,7 @@ const config = require('./lib/config')
 const error = require('./lib/error')
 const logger = require('./lib/logger')
 
-const fs = require('fs-plus')
+const fs = require('fs')
 
 
 
@@ -14,10 +14,14 @@ const fs = require('fs-plus')
 
 logger.init()
 
-const files = explorer.browse(config.directories, pathname => // Get potential movies
-    (fs.isFileSync(pathname) && config.extensions.file.length > 0 && new RegExp('\.(' + config.extensions.file.join('|') + ')$', 'i').test(pathname)) ||
-    (fs.isDirectorySync(pathname) && config.extensions.directory.length > 0 && new RegExp('\.(' + config.extensions.directory.join('|') + ')$', 'i').test(pathname))
-)
+const files = explorer.browse(config.directories, pathname => { // Get potential movies
+    const stats = fs.statSync(pathname)
+
+    return (stats.isFile() && config.extensions.file.length > 0 && new RegExp('\.(' + config.extensions.file.join('|') + ')$', 'i').test(pathname))
+        || (stats.isDirectory() && config.extensions.directory.length > 0 && new RegExp('\.(' + config.extensions.directory.join('|') + ')$', 'i').test(pathname))
+})
+
+core.init()
 
 for (const [index, file] of files.entries()) // Extract data for each movie
     try {
@@ -38,6 +42,6 @@ for (const [index, file] of files.entries()) // Extract data for each movie
             throw e
     }
 
-core.flushHandler() // Flush tmp
+core.done()
 
 logger.done()
