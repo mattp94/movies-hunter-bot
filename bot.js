@@ -23,6 +23,8 @@ const files = explorer.browse(config.directories, pathname => { // Get potential
 
 core.init()
 
+logger.title('Scraping')
+
 for (const [index, file] of files.entries()) // Extract data for each movie
     try {
         let result
@@ -43,5 +45,7 @@ for (const [index, file] of files.entries()) // Extract data for each movie
     }
 
 core.done()
+
+logger.title('Stats')
 
 logger.done()
