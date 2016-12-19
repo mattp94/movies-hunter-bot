@@ -1,9 +1,11 @@
 {
-  "name": "movies-hunter",
+  "name": "movies-hunter-bot",
   "version": "0.0.0",
-  "description": "Bot for movies-hunter app",
+  "description": "A web bot for Movies-Hunter",
   "main": "bot.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node bot.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mattp94/movies-hunter.git"
