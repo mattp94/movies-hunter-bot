@@ -74,8 +74,8 @@ extensions:
 ```
 
 Here, you can define file or directory extensions (**lowercase**) which will be analyzed by the bot:
-* `extensions.file`: a list of file extensions like video file, disk image, etc.
-* `extensions.directory`: a list of directory extensions especially if you need to detect folders containing *VIDEO_TS* for instance. In the above case, just add *.dvd* to folders you want to analyze.
+* `extensions.file`: file extensions like video file, disk image, etc.
+* `extensions.directory`: directory extensions especially if you need to detect folders containing *VIDEO_TS* for instance. In the above case, just add *.dvd* to folders you want to analyze.
 
 
 ### Download
@@ -89,6 +89,16 @@ download:
 In the last part, you can manage what you want to download:
 * `download.posters`: `true` or `false` to enable or not download of posters. If not, only an url to the resource will be saved in database.
 * `download.trailers`: same as above but for trailers. Be careful, trailers can be large.
+
+
+
+## Tags usage
+
+If you want to add tags on your files, use `{{tag}}` notation in filename. For example, *Le Triomphe de Babar {{cartoon}} 1990 {{elephant}}.mkv* will give `['cartoon', 'elephant']`.
+
+Special tags are used by the bot to do particular stuff:
+
+* `{{ignore}}`: to ignore a potential movie (potential only).
 
 
 
