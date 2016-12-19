@@ -7,6 +7,7 @@ const error = require('./lib/error')
 const logger = require('./lib/logger')
 
 const fs = require('fs')
+const path = require('path')
 
 
 
@@ -16,9 +17,10 @@ logger.init()
 
 const files = explorer.browse(config.directories, pathname => { // Get potential movies
     const stats = fs.statSync(pathname)
+    const ext = path.extname(pathname).replace(/^\./, '').toLowerCase()
 
-    return (stats.isFile() && config.extensions.file.length > 0 && new RegExp('\.(' + config.extensions.file.join('|') + ')$', 'i').test(pathname))
-        || (stats.isDirectory() && config.extensions.directory.length > 0 && new RegExp('\.(' + config.extensions.directory.join('|') + ')$', 'i').test(pathname))
+    return (stats.isFile() && config.extensions.file.includes(ext))
+        || (stats.isDirectory() && config.extensions.directory.includes(ext))
 })
 
 core.init()
