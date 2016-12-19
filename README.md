@@ -58,7 +58,9 @@ directories:
     - /Users/matthieu/Documents/Mes Films
 ```
 
-In this part, `directories` contains paths that bot will explore to find potential movies. You can add as many as paths you want while they are absolute.
+In this part, `directories` contains paths that bot will explore to find potential movies. You can add as many as paths you want while they are **absolute** and **unique**.
+
+Make sure you don't add the same path twice or children of an existing directory! Duplicates would be added in database...
 
 
 ### Extensions
@@ -94,7 +96,7 @@ In the last part, you can manage what you want to download:
 
 ## Tags usage
 
-If you want to add tags on your files, use `{{tag}}` notation in filename. For example, *Le Triomphe de Babar {{cartoon}} 1990 {{elephant}}.mkv* will give `['cartoon', 'elephant']`.
+If you want to add tags on your files, use `{{tag}}` notation in filename. For example, *Le Triomphe de Babar {{cartoon}} 1990 {{elephant}}.mkv* would save `['cartoon', 'elephant']` in database.
 
 Special tags are used by the bot to do particular stuff:
 
