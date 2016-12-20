@@ -1,10 +1,6 @@
 # Movies-Hunter
-data/posters/full/*
-data/posters/thumbnail/*
-data/trailers/*
-!data/posters/full/.gitkeep
-!data/posters/thumbnail/.gitkeep
-!data/trailers/.gitkeep
+data
+logs
 
 # Hidden files
 .DS_Store

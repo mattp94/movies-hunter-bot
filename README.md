@@ -38,10 +38,7 @@ To run the bot:
 npm start
 ```
 
-You can also create a cron job to launch it periodically:
-```bash
-0 5 * * * cd ~/movies-hunter-bot && npm start
-```
+You can also create a cron job to launch it periodically.
 
 
 
@@ -106,4 +103,8 @@ Special tags are used by the bot to do particular stuff:
 
 ## Reset
 
-If you've got an issue and need to reset everything, run `reset.bash`.
+If you've got an issue and need to reset everything:
+
+```bash
+npm run reset
+```
