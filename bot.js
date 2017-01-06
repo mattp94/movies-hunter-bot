@@ -31,12 +31,12 @@ for (const [index, file] of files.entries()) // Extract data for each movie
     try {
         let result
 
-        result = core.movieHandler(file) // Add movie and from
-        result = core.duplicateHandler(result) // Add duplicate or undefined
-        result = core.posterHandler(result) // Add poster (true or false)
-        result = core.trailerHandler(result) // Add trailer (true or false)
-                 core.insertionHandler(result)
-                 core.sleepHandler(result)
+        result = core.movie(file) // Add movie and from
+        result = core.duplicate(result) // Add duplicate or undefined
+        result = core.poster(result) // Add poster (true or false)
+        result = core.trailer(result) // Add trailer (true or false)
+                 core.insertion(result)
+                 core.sleep(result)
 
         logger.success(result, file, index, files.length)
     } catch (e) {
