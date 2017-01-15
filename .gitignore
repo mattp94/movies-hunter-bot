@@ -5,7 +5,7 @@ logs
 # Hidden files
 .DS_Store
 
-# Dependency directories
+# Dependencies directories
 node_modules
 
 # Logs
