@@ -15,11 +15,9 @@ Data is saved in `data/db.json`. Posters, thumbnails and trailers are in `data`.
 
 ## Requirements
 
-I used the following versions:
-* [Node.js](https://nodejs.org/) v6.9.1
-* [npm](https://www.npmjs.com/) v3.10.8
-* [ImageMagick](https://www.imagemagick.org/) (convert) v6.9.4
-* [FFmpeg](https://ffmpeg.org/) (ffprobe) v3.0
+* [Node.js](https://nodejs.org/) v6 or newer
+* [ImageMagick](https://www.imagemagick.org/) (convert)
+* [FFmpeg](https://ffmpeg.org/) (ffprobe)
 
 
 
