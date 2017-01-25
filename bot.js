@@ -3,10 +3,9 @@
 const explorer = require('./lib/explorer')
 const core = require('./lib/core')
 const config = require('./lib/config')
-const error = require('./lib/error')
 const logger = require('./lib/logger')
+const {LoggedError} = require('./lib/error')
 
-const fs = require('fs')
 const path = require('path')
 
 
@@ -15,8 +14,7 @@ const path = require('path')
 
 logger.init()
 
-const files = explorer.browse(config.directories, pathname => { // Get potential movies
-    const stats = fs.statSync(pathname)
+const files = explorer.browse(config.directories, (pathname, stats) => { // Get potential movies
     const ext = path.extname(pathname).replace(/^\./, '').toLowerCase()
 
     return (stats.isFile() && config.extensions.file.includes(ext))
@@ -40,7 +38,7 @@ for (const [index, file] of files.entries()) // Extract data for each movie
 
         logger.success(result, file, index, files.length)
     } catch (e) {
-        if (e instanceof error.LoggedError)
+        if (e instanceof LoggedError)
             logger.failure(e.message, file, index, files.length)
         else
             throw e
