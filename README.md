@@ -90,7 +90,9 @@ In the last part, you can manage what you want to download:
 
 ## Tags usage
 
-If you want to add tags on your files, use `{{tag}}` notation in filename. For example, `Le Triomphe de Babar {{cartoon}} 1990 {{elephant}}.mkv` would save `['cartoon', 'elephant']` in database.
+If you want to add tags on your files, use `{{tag}}` notation in filename.
+
+For example, `Le Triomphe de Babar {{cartoon}} 1990 {{elephant}}.mkv` would save `['cartoon', 'elephant']` in database.
 
 Special tags are used by the bot to do particular stuff:
 
