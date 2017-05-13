@@ -17,8 +17,7 @@ logger.init()
 const files = explorer.browse(config.directories, (pathname, stats) => { // Get potential movies
     const ext = path.extname(pathname).replace(/^\./, '').toLowerCase()
 
-    return (stats.isFile() && config.extensions.file.includes(ext))
-        || (stats.isDirectory() && config.extensions.directory.includes(ext))
+    return stats.isFile() && config.extensions.includes(ext)
 })
 
 core.init()
