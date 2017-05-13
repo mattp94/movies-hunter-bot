@@ -1,12 +1,12 @@
-// *** Libraries ***
-
-const explorer = require('./lib/explorer')
-const core = require('./lib/core')
-const config = require('./lib/config')
-const logger = require('./lib/logger')
-const {LoggedError} = require('./lib/error')
+// *** Imports ***
 
 const path = require('path')
+
+const config = require('./lib/config')
+const core = require('./lib/core')
+const explorer = require('./lib/explorer')
+const logger = require('./lib/logger')
+const { LoggedError } = require('./lib/error')
 
 
 
@@ -36,11 +36,11 @@ for (const [index, file] of files.entries()) // Extract data for each movie
                  core.sleep(result)
 
         logger.success(result, file, index, files.length)
-    } catch (e) {
-        if (e instanceof LoggedError)
-            logger.failure(e.message, file, index, files.length)
+    } catch (err) {
+        if (err instanceof LoggedError)
+            logger.failure(err.message, file, index, files.length)
         else
-            throw e
+            throw err
     }
 
 core.done()

@@ -1,13 +1,13 @@
-// *** Libraries ***
+// *** Imports ***
+
+const chalk = require('chalk')
+const fs = require('fs')
+const mkdirp = require('mkdirp')
+const path = require('path')
+const rimraf = require('rimraf')
 
 const config = require('./lib/config')
 const utility = require('./lib/utility')
-
-const fs = require('fs')
-const path = require('path')
-const rimraf = require('rimraf')
-const mkdirp = require('mkdirp')
-const chalk = require('chalk')
 
 
 
