@@ -6,6 +6,3 @@ extensions:
     - mp4
     - iso
     - img
-download:
-    posters: true
-    trailers: true
