@@ -2,10 +2,9 @@
   "name": "movies-hunter-bot",
   "version": "1.0.2",
   "description": "A web bot for Movies-Hunter",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
-    "install": "node reset.js",
-    "start": "node bot.js",
+    "start": "node index.js",
     "reset": "node reset.js"
   },
   "repository": {
