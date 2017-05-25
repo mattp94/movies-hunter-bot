@@ -1,22 +1,19 @@
 # Movies-Hunter Bot
 
-A web bot used by *Movies-Hunter* (mine) to extract data on the Internet for your movies, by browsing disk locations:
+A web bot used by *Movies-Hunter* (mine) to extract data on the Internet for your movies:
 
 1. It scans directories recursively in order to find potential movies.
 2. Then, it uses the power of *Google Search* to find an *AlloCiné* code.
 3. Finally, it extracts data from *AlloCiné* api, downloads poster + trailer and generates a thumbnail.
 4. Next time, it will be able to use its own database to save time.
 
-Because it scrapes *Google* and uses *AlloCiné* api, a random delay is thrown between each movie to avoid restrictions. Fortunately, it doesn't when there is no need to go on the Internet.
-
-Data is saved in `data/db.json`. Posters, thumbnails and trailers are in `data`.
+Data is saved in `data/db.json`. Posters, thumbnails and trailers are available in `data`.
 
 
 
 ## Requirements
 
-* [Node.js](https://nodejs.org/) v7 or newer
-* [ImageMagick](https://www.imagemagick.org/) (convert)
+* [Node.js](https://nodejs.org/) v7.6 or newer
 * [FFmpeg](https://ffmpeg.org/) (ffprobe)
 
 
@@ -41,7 +38,7 @@ You can also create a cron job to launch it periodically.
 
 ## Configuration
 
-In the project's root, you can see `config.yml` which allows you to make your own configuration. It's written in YAML, so respect the good syntax.
+In the project's root, you can see `config.yml` which allows you to make your own configuration:
 
 
 ### Directories
@@ -49,7 +46,7 @@ In the project's root, you can see `config.yml` which allows you to make your ow
 ```yml
 directories:
     - /Users/matthieu/Movies
-    - /Users/matthieu/Documents/Mes Films
+    - /Users/matthieu/Documents/Films
 ```
 
 In this part, `directories` contains paths that bot will explore to find potential movies. You can add as many as paths you want while they are **absolute** and **unique**.
@@ -66,7 +63,7 @@ extensions:
     - iso
 ```
 
-Here, you can define filename extensions (**lowercase**) which will be analyzed by the bot. **Only file** are supported! Videos or disk images for instance.
+Here, you can define filename extensions (**lowercase**) which will be analyzed by the bot. **Only files** are supported! Videos or disk images for instance.
 
 
 
