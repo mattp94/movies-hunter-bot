@@ -4,7 +4,6 @@ const chalk = require('chalk')
 const moment = require('moment')
 
 const bot = require('./lib/bot')
-const utility = require('./lib/utility')
 
 const { version, author: { name } } = require('./package.json')
 
