@@ -2,6 +2,7 @@
 
 const chalk = require('chalk')
 const moment = require('moment')
+const process = require('process')
 
 const bot = require('./lib/bot')
 
@@ -19,4 +20,5 @@ console.log(chalk.gray('---'))
 
 bot().catch(err => {
     console.log(err)
+    process.exit(1)
 })
