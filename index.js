@@ -2,7 +2,6 @@
 
 const chalk = require('chalk')
 const moment = require('moment')
-const process = require('process')
 
 const bot = require('./lib/bot')
 
