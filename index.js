@@ -4,20 +4,23 @@ const chalk = require('chalk')
 const moment = require('moment')
 
 const bot = require('./lib/bot')
+const logger = require('./lib/logger')
 
-const { version, author: { name } } = require('./package.json')
+const { version } = require('./package.json')
 
 
 
 // *** Main ***
 
-const date = new Date()
+const main = async () => {
+    const date = new Date()
 
-console.log(chalk.gray(`Movies-Hunter Bot v${version} by ${name}`))
-console.log(chalk.gray('Launched on ') + moment(date).format('dddd, MMMM Do YYYY') + chalk.gray(' at ') + moment(date).format('HH:mm:ss'))
-console.log(chalk.gray('---'))
+    await logger.init(date, version)
+    await bot()
+    await logger.done(date)
+}
 
-bot().catch(err => {
+main().catch(err => {
     console.log(err)
     process.exit(1)
 })
