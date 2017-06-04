@@ -63,7 +63,7 @@ extensions:
     - iso
 ```
 
-Here, you can define filename extensions (**lowercase**) which will be analyzed by the bot. **Only files** are supported! Videos or disk images for instance.
+Here, you can define filename extensions (**lowercase**) which will be analyzed by the bot. **Files only** are supported!
 
 
 
