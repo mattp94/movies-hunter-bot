@@ -13,7 +13,7 @@ Data is saved in `data/db.json`. Posters, thumbnails and trailers are available 
 
 ## Requirements
 
-* [Node.js](https://nodejs.org/) v7.6 or newer
+* [Node.js](https://nodejs.org/) v8 or newer
 * [FFmpeg](https://ffmpeg.org/) (ffprobe)
 
 
@@ -75,7 +75,9 @@ For example, `Le Triomphe de Babar 1990 {{cartoon}} {{elephant}}.mkv` will save 
 
 Special tags are used by the bot to do particular stuff:
 
-* `{{ignore}}`: to ignore a **potential** movie.
+* `{{local}}`: to save a movie without fetching data.
+* `{{ignore}}`: to ignore a file.
+* `{{reset}}`: to reset a specific movie.
 
 
 
