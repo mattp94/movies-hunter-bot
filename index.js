@@ -1,8 +1,5 @@
 // *** Imports ***
 
-const chalk = require('chalk')
-const moment = require('moment')
-
 const bot = require('./lib/bot')
 const logger = require('./lib/logger')
 
