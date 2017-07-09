@@ -1,14 +1,8 @@
 ---
 directories: []
 extensions:
-    file:
-        - mkv
-        - avi
-        - mp4
-        - iso
-        - img
-    directory:
-        - dvd
-download:
-    posters: true
-    trailers: true
+    - mkv
+    - avi
+    - mp4
+    - iso
+    - img

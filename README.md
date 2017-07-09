@@ -1,22 +1,19 @@
 # Movies-Hunter Bot
 
-A web bot used by *Movies-Hunter* (mine) to extract data on the Internet for your movies, by browsing disk locations:
+A web bot used by *Movies-Hunter* (mine) to extract data on the Internet for your movies:
 
-1. It scans directories and files by following configuration requirements.
+1. It scans directories recursively in order to find potential movies.
 2. Then, it uses the power of *Google Search* to find an *AlloCiné* code.
 3. Finally, it extracts data from *AlloCiné* api, downloads poster + trailer and generates a thumbnail.
 4. Next time, it will be able to use its own database to save time.
 
-Because it scrapes *Google* and uses *AlloCiné* api, a random delay is thrown between each movie to avoid restrictions. Fortunately, it doesn't when there is no need to go on the Internet.
-
-Data is saved in `data/db.json`. Posters, thumbnails and trailers are in `data`.
+Data is saved in `data/db.json`. Posters, thumbnails and trailers are available in `data`.
 
 
 
 ## Requirements
 
-* [Node.js](https://nodejs.org/) v6 or newer
-* [ImageMagick](https://www.imagemagick.org/) (convert)
+* [Node.js](https://nodejs.org/) v8 or newer
 * [FFmpeg](https://ffmpeg.org/) (ffprobe)
 
 
@@ -41,7 +38,7 @@ You can also create a cron job to launch it periodically.
 
 ## Configuration
 
-In the project's root, you can see `config.yml` which allows you to make your own configuration. It's written in YAML, so respect the good syntax.
+In the project's root, you can see `config.yml` which allows you to make your own configuration:
 
 
 ### Directories
@@ -49,7 +46,7 @@ In the project's root, you can see `config.yml` which allows you to make your ow
 ```yml
 directories:
     - /Users/matthieu/Movies
-    - /Users/matthieu/Documents/Mes Films
+    - /Users/matthieu/Documents/Films
 ```
 
 In this part, `directories` contains paths that bot will explore to find potential movies. You can add as many as paths you want while they are **absolute** and **unique**.
@@ -61,42 +58,26 @@ Make sure you don't add the same path twice or children of an existing directory
 
 ```yml
 extensions:
-    file:
-        - mkv
-        - avi
-        - iso
-    directory:
-        - dvd
+    - mkv
+    - avi
+    - iso
 ```
 
-Here, you can define file or directory extensions (**lowercase**) which will be analyzed by the bot:
-* `extensions.file`: file extensions like video file, disk image, etc.
-* `extensions.directory`: directory extensions especially if you need to detect folders containing *VIDEO_TS* for instance. In the above case, just add *.dvd* to folders you want to analyze.
-
-
-### Download
-
-```yml
-download:
-    posters: true
-    trailers: true
-```
-
-In the last part, you can manage what you want to download:
-* `download.posters`: `true` or `false` to enable or not download of posters. If not, only an url to the resource will be saved in database.
-* `download.trailers`: same as above but for trailers. Be careful, trailers can be large.
+Here, you can define filename extensions (**lowercase**) which will be analyzed by the bot. **Files only** are supported!
 
 
 
 ## Tags usage
 
-If you want to add tags on your files, use `{{tag}}` notation in filename.
+If you want to add tags on your files, use `{{tag}}` notation anywhere in a filename.
 
-For example, `Le Triomphe de Babar {{cartoon}} 1990 {{elephant}}.mkv` would save `['cartoon', 'elephant']` in database.
+For example, `Le Triomphe de Babar 1990 {{cartoon}} {{elephant}}.mkv` will save `['cartoon', 'elephant']` in database.
 
 Special tags are used by the bot to do particular stuff:
 
-* `{{ignore}}`: to ignore a **potential** movie.
+* `{{local}}`: to save a movie without fetching data.
+* `{{ignore}}`: to ignore a file.
+* `{{reset}}`: to reset a specific movie.
 
 
 
