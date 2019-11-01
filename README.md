@@ -3,8 +3,8 @@
 A web bot used by *Movies-Hunter* (mine) to extract data on the Internet for your movies:
 
 1. It scans directories recursively in order to find potential movies.
-2. Then, it uses the power of *Google Search* to find an *AlloCiné* code.
-3. Finally, it extracts data from *AlloCiné* api, downloads poster + trailer and generates a thumbnail.
+2. Then, it uses the power of *Google Search* to find an *TMDb* code.
+3. Finally, it extracts data from *TMDb* api, downloads poster + trailer and generates a thumbnail.
 4. Next time, it will be able to use its own database to save time.
 
 Data is saved in `data/db.json`. Posters, thumbnails and trailers are available in `data`.
@@ -15,6 +15,7 @@ Data is saved in `data/db.json`. Posters, thumbnails and trailers are available 
 
 * [Node.js](https://nodejs.org/) v8 or newer
 * [FFmpeg](https://ffmpeg.org/) (ffprobe)
+* [API key](https://www.themoviedb.org/documentation/api) for TMDb
 
 
 
@@ -29,7 +30,7 @@ npm install
 To run the bot:
 
 ```bash
-npm start
+TMDB_KEY=key npm start
 ```
 
 You can also create a cron job to launch it periodically.
