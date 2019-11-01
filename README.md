@@ -3,7 +3,7 @@
 A web bot used by *Movies-Hunter* (mine) to extract data on the Internet for your movies:
 
 1. It scans directories recursively in order to find potential movies.
-2. Then, it uses the power of *Google Search* to find an *TMDb* code.
+2. Then, it uses the power of *Google Search* to find a *TMDb* code.
 3. Finally, it extracts data from *TMDb* api, downloads poster + trailer and generates a thumbnail.
 4. Next time, it will be able to use its own database to save time.
 
